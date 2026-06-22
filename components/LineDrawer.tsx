@@ -107,8 +107,8 @@ export function LineDrawer({
             <Field label="Localisation">
               <TextField value={line.localisation} placeholder="ex. Séjour Sud" onChange={(value) => onChange({ localisation: value })} />
             </Field>
-            <div className="grid grid-cols-[1fr_1fr_auto] gap-3">
-              <Field label="Largeur" hint={dimensionHint(widthError, result.snappedW, abaque ? [abaque.L_min, abaque.L_max] : undefined)}>
+            <div className="grid grid-cols-2 gap-3">
+              <Field label="Largeur (mm)" hint={dimensionHint(widthError, result.snappedW, abaque ? [abaque.L_min, abaque.L_max] : undefined)}>
                 <DimensionField
                   value={line.L}
                   step={route?.width_step ?? 100}
@@ -117,7 +117,7 @@ export function LineDrawer({
                   onChange={(value) => onChange({ L: value })}
                 />
               </Field>
-              <Field label="Hauteur" hint={dimensionHint(heightError, result.snappedH, abaque ? [abaque.H_min, abaque.H_max] : undefined)}>
+              <Field label="Hauteur (mm)" hint={dimensionHint(heightError, result.snappedH, abaque ? [abaque.H_min, abaque.H_max] : undefined)}>
                 <DimensionField
                   value={line.H}
                   step={route?.height_step ?? 100}
@@ -126,7 +126,9 @@ export function LineDrawer({
                   onChange={(value) => onChange({ H: value })}
                 />
               </Field>
-              <Field label="Qté">
+            </div>
+            <div className="w-32">
+              <Field label="Quantité">
                 <DimensionField
                   value={line.qte}
                   step={1}

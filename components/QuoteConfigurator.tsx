@@ -147,8 +147,10 @@ export function QuoteConfigurator() {
   }
 
   function resetAll() {
-    if (!window.confirm("Réinitialiser le devis ? Toutes les lignes seront effacées.")) return;
+    if (!window.confirm("Réinitialiser le devis ? Toutes les lignes et informations seront effacées.")) return;
     setEntries([makeEntry()]);
+    setHeader(defaultHeader);
+    setRemisePercent(String(tables.remiseDefault * 100).replace(".", ","));
     setSelectedId(null);
   }
 

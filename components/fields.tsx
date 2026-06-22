@@ -98,7 +98,7 @@ export function DimensionField({
         tabIndex={-1}
         aria-label={`${ariaLabel} moins ${step}`}
         onClick={() => nudge(-step)}
-        className="w-8 shrink-0 text-muted transition hover:bg-accent-wash hover:text-ink"
+        className="grid w-7 shrink-0 place-items-center text-base text-muted transition hover:bg-accent-wash hover:text-ink"
       >
         −
       </button>
@@ -106,9 +106,10 @@ export function DimensionField({
         value={value}
         type="number"
         inputMode="numeric"
+        size={1}
         aria-label={ariaLabel}
         onChange={(event) => onChange(event.target.value === "" ? "" : Number(event.target.value))}
-        className={`w-full min-w-0 border-x border-line-soft bg-transparent px-1 text-center text-sm tabular-nums outline-none ${
+        className={`min-w-0 flex-1 border-x border-line-soft bg-transparent px-1 text-center text-sm tabular-nums outline-none ${
           error ? "text-danger" : ""
         }`}
       />
@@ -117,7 +118,7 @@ export function DimensionField({
         tabIndex={-1}
         aria-label={`${ariaLabel} plus ${step}`}
         onClick={() => nudge(step)}
-        className="w-8 shrink-0 text-muted transition hover:bg-accent-wash hover:text-ink"
+        className="grid w-7 shrink-0 place-items-center text-base text-muted transition hover:bg-accent-wash hover:text-ink"
       >
         +
       </button>
