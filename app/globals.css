@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Palette de marque A.R.C ALUMINIUM — papier chaud, encre anthracite, or signature */
+@theme {
+  --color-paper: #f3f1ec;
+  --color-panel: #ffffff;
+  --color-ink: #1a1a17;
+  --color-ink-soft: #2e2e2a;
+  --color-muted: #8a847a;
+  --color-line: #e5e1d8;
+  --color-line-soft: #efece4;
+  --color-accent: #febc05;
+  --color-accent-strong: #e3a700;
+  --color-accent-tint: #fbf1d3;
+  --color-accent-wash: #fdf8ea;
+  --color-danger: #b42318;
+  --color-danger-bg: #fdf1f0;
+
+  --font-sans: var(--font-display), "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Masque les flèches natives des input number (on fournit nos boutons −/+) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  @page {
+    margin: 14mm;
+  }
+}
